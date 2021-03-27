@@ -1,0 +1,163 @@
+
+/*** Core page styles to set the primary colours and styles to be inherited by everything else ***/
+html * {
+        /*font-family:put your fancy font here. you know you want one.;*/
+}
+body{
+        margin:40px auto;
+        max-width:650px;
+        line-height:1.6;
+        font-size:18px;
+        color:#212121;
+        background-color:#ffffff;
+        padding:0 10px;
+}
+/********************************/
+/********************************/
+
+
+/*** Post styling. This section is for defining markup classes to make it easier to write prettier posts. ***/
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius:16px;
+}
+
+.code { /* code block, usage <div class="code"><p>codegoeshere</p></div> */
+        background-color:#eee;
+        border-radius:16px;
+        padding-left:30px;
+        padding-right:30px;
+        line-height:2em;
+
+        padding-top:1px;
+        padding-bottom:1px;
+}
+.bq { /* block quote, usage <p class="bq">quotegoeshere</p> */
+        padding:0 50px;
+        font-style: italic;
+        color:#626262;
+}
+
+hr {
+        color:#212121;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+}
+
+a {
+        color:#00458b
+}
+
+h1{
+        line-height:1.2
+}
+
+h2,h3{
+        padding-top:24px;
+        line-height:1.2
+}
+
+/* Style for inline dates. Rather than be part of the page header/footer, these are configured via a separate include file in /config/date.html so that they can be used via an inline include statement in the post template that they can be omitted on a per-post basis for posts that don't really need to have their published date+author visible. */
+.date { 
+        padding-bottom:0;
+        margin-bottom:0;
+        font-size:14px;
+}
+
+@media screen and (max-width: 900px) {
+.date { 
+        text-align:right;
+}
+}
+@media screen and (min-width: 900px) {
+.date { 
+        float:right;
+}
+}
+
+/********************************/
+/********************************/
+
+
+/*** Modular component styles. Includes styling for the headers, navigation controls, and foorer. ***/
+
+/* Site logo. Styled to responsively move to either left or be centred, depending if the page is being viewed on desktop or mobile respectively. */
+@media screen and (max-width: 900px) {
+        .logo {           
+                margin-bottom:20px;
+                text-align:center;
+        }
+}
+
+@media screen and (min-width: 900px) {
+        .logo {
+                transform: translate3d(-120px, 0, 0);
+                margin-bottom:20px;
+        }
+}
+
+/* Navbar styling. This site has both a topbar and a sidebar, which change responsively based on whether the site is being viewed on mobile (thin screen) or on desktop */
+.sidebar { 
+        float:left;
+        padding-right:10px;
+        border-right:1px solid #212121;
+        margin-right:20px;
+        position:absolute;
+        transform: translate3d(-120px, 0, 0);
+}
+.sidebar a { 
+color:#212121; 
+text-decoration:none;
+}
+.sidebar p {
+        line-height:1px;
+        padding-bottom:10px;
+}
+
+@media screen and (max-width: 900px) {
+        .sidebar {
+        display: none;
+        }
+}
+.topbar {
+        padding-right:10px;
+        border-top:1px solid #212121;
+        border-bottom:1px solid #212121;
+        margin-bottom:20px;
+        text-align:center;
+}
+.topbar a {
+        color:#212121;
+        text-decoration:none;
+}
+
+@media screen and (min-width: 900px) {
+        .topbar {
+        display: none;
+  }
+}
+
+/* Site footer styling */
+.footer {
+        border-top:2px solid #212121;
+        font-size:12px;
+        margin-top:120px;
+        text-align:center;
+}
+/********************************/
+/********************************/
+
+
+/*** Other misc garbage ***/
+
+/* Style for nginx fancyindex table. Avoid using specifically <table id="list"> anywhere in your posts to avoid this style from fucking up your formatting */
+#list {
+table {margin-left:auto;margin-right:auto;}
+table td:nth-child(2) {display : none;}
+table th:nth-child(2) {display : none;}
+}
