@@ -10,7 +10,7 @@ One day I woke up and thought to myself that keeping up on the maintenance of my
 
 I told myself that there *has* to be a better way. I should be running my website; it shouldn't be running *me*. There are nineties websites [still running to this day](http://home.mcom.com/home/welcome.html) that haven't been modified for longer than I've been alive. Why is it that these pages can go literally decades without updates and still remain functional, while my Ghost site will throw a fit when I run a routine server update?
 
-Well, I'll tell you why. It's because we as web developers have forgotten our roots as webmasters. We throw together all this unnecessary garbage fragile garbage rather than using the rock-solid web foundations that those frameworks are built on to their fullest potential.
+Well, I'll tell you why. It's because we as web developers have forgotten our roots as webmasters. We throw together all this unnecessary garbage fragile rather than using the rock-solid web foundations that those frameworks are built on to their fullest potential.
 
 WebmasterCMS is my attempt at solving that problem.
 
