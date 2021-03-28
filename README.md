@@ -14,7 +14,7 @@ Well, I'll tell you why. It's because we as web developers have forgotten our ro
 
 WebmasterCMS is my attempt at solving that problem.
 
-![wmcms preview](https://i.imgur.com/9P4HArk.png?1)
+![wmcms preview](https://i.imgur.com/A1MPbIJ.png?1)
 
 ### Key Features/Notes:
 
