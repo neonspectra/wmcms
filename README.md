@@ -1,6 +1,6 @@
 # WebmasterCMS - The CMS for Webmasters
 
-*You think you're so cool with your Wordpress site with more plug-ins than your phone charger is factory rated for? Your garbage blog that pumps out HTTP requests like it's calling up the whole phonebook any time you try to load a page?*
+*You think you're so cool with your Wordpress site that has more plug-ins than your phone charger is factory rated for? You think it's neat to build a blog that pumps out HTTP requests like it's calling up the whole phonebook any time you try to load a single page?*
 
 *Well, guess what. This is a real, organic, free-range web framework. You've never seen one before. It's easily traversable. It's responsive and modular. It's got all your metadata tags and serves up pages in style. What more could you ask for?*
 
