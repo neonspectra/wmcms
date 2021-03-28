@@ -1,7 +1,7 @@
 
 /*** Core page styles to set the primary colours and styles to be inherited by everything else ***/
 html * {
-        /*font-family:put your fancy font here. you know you want one.;*/
+        font-family:sans-serif;
 }
 body{
         margin:40px auto;
