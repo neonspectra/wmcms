@@ -78,6 +78,7 @@ After you have nginx installed, you will want to add some items to your nginx co
                 fancyindex_exact_size off;  # Output human-readable file sizes.
                 fancyindex_footer /config/footer.html; # Sets the footer for your index pages
                 fancyindex_header /config/header.html; # Sets the header for your index pages
+                fancyindex_default_sort date_desc; # Sorts indices by date, with newest posts at the top
                 fancyindex_time_format "%F"; # Sets the date format for index pages. Default: 2077-01-01
                 fancyindex_show_path off;
         }
