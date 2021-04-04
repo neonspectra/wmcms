@@ -24,8 +24,13 @@ pubdate=$(grep 'meta property="article:published_time"' $webpage | sed -n -e 's/
 # Convert html's ISO8601 date to RSS's RFC-822.
 pubdate=$(date -d"$pubdate" --rfc-822)
 
-# Creates a new RSS item entry in our existing RSS feed. What kind of webmasters would we be if we didn't find a way to use ed for our site?
+# Updates the last build date of the RSS feed to now, then creates a new item entry in our existing feed. What kind of webmasters would we be if we didn't find a way to use ed for our site?
 ed $rss << EOF
+/<lastBuildDate>
+d
+a
+<lastBuildDate>$(date --rfc-822)</lastBuildDate>
+.
 /$rssitemstart
 .t.
 s/.*/<item>
