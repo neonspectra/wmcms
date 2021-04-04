@@ -18,7 +18,7 @@ WebmasterCMS is my attempt at solving that problem.
 
 ### Key Features/Notes:
 
-wmcms is a static site template built for hosting article-based websites on an nginx webserver. Think of it as "Wordpress without the bullshit".
+wmcms is a static site template built for hosting article-based websites on an nginx webserver. Think of it as "Ghost without the bullshit".
 
 wmcms is a site template that is designed with webmasters in mind, not end users. It's designed to make it as easy and painless as possible to get down and dirty with maintaining your website, you fucking webmaster you. You should be familiar with configuring and maintaining basic web technologies to make the most out of wmcms. You should be prepared to open up and familiarise yourself with how to modify every single file in this entire repository by hand (there's really not that many and none of it is particularly complex-- and that's the whole point of this project!)
 
@@ -26,6 +26,8 @@ wmcms is a site template that is designed with webmasters in mind, not end users
  - No javascript, php, databases, or really anything else
  - Modular design: core site components are centralised in one location, so you only need to modify one set of files to globally tweak your website.
  - Posts are written in raw html
+
+For a live example of a website running wmcms, check out https://neosynth.net
 
 ### Design Philosophy
 
