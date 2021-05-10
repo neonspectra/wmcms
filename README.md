@@ -92,7 +92,7 @@ After you have nginx installed, you will want to add some items to your nginx co
 
         location /posts { # '/posts' should be both explorable and use SSI
         ssi on;
-        fancyindex off;
+        fancyindex on;
         }
 
         location /meta { # Metapages should have SSI, but you probably don't want these indexed
