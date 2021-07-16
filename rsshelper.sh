@@ -3,7 +3,6 @@
 
 # Command usage: rsshelper.sh https://example.com/posts/template-post/index.html
 rss='/var/www/html/rss.xml' # Location of your site's RSS file goes here
-rssitemstart='<ttl>' #Specifies a whatever tag is the very last tag in your RSS file before the <item> section begins. This will vary from feed to feed because the RSS standard does not have any sane delineation between its header and contents. If you are using the default RSS feed provided by wmcms, <ttl> should be the last line before new entries begin.
 
 # Begin script function below.
 #############################
@@ -31,10 +30,11 @@ d
 a
 <lastBuildDate>$(date --rfc-822)</lastBuildDate>
 .
-/$rssitemstart
-.t.
-s/.*/<item>
+$
+-
+-
 a
+<item>
 <title>$title</title>
 <dc:creator>$author</dc:creator>
 <description>$description</description>
