@@ -6,11 +6,13 @@
 
 ### The Story
 
-One day I woke up and thought to myself that keeping up on the maintenance of my personal [Ghost](https://ghost.org/) website is actually a massive pain. They're always changing how various methods in the themes work, how the site itself works, or some other crap. My website was slowly conditioning me to be terrified of updating because of the time cost to fixing it every time it broke. After all, I'm just one woman. Most modern site engines just take for granted that you have an entire corporate dev team with practically unlimited man hours constantly troubleshoot whatever conflicts will inevitably crop up as updates are applied. I don't have time for that shit. 
+One day I woke up and thought to myself that keeping up on the maintenance of my personal [Ghost](https://ghost.org/) website is actually a massive pain. They're always changing how various methods in the themes work, how the site itself works, or some other crap. 
+
+Like some kind of fucked up Pavlovian experiment, I realised that my website was slowly conditioning me to be terrified of updating since I knew I'd be the one to have to take the time and fix it every time it broke. Most modern site engines take for granted that you have an entire corporate dev team with practically unlimited man hours constantly troubleshoot whatever conflicts will inevitably crop up as updates are applied. But I'm just one woman. I don't have time for that shit. 
 
 I told myself that there *has* to be a better way. I should be running my website; it shouldn't be running *me*. There are nineties websites [still running to this day](http://home.mcom.com/home/welcome.html) that haven't been modified for longer than I've been alive. Why is it that these pages can go literally decades without updates and still remain functional, while my Ghost site will throw a fit when I run a routine server update?
 
-Well, I'll tell you why. It's because we as web developers have forgotten our roots as webmasters. We throw together all this unnecessary fragile garbage rather than using the rock-solid web foundations that those frameworks are built on to their fullest potential.
+Well, I'll tell you why. It's because we as web developers have forgotten our roots as webmasters. We throw together all this unnecessary fragile garbage rather than using the full potential of the rock-solid web foundations that modern frameworks are built to extend.
 
 WebmasterCMS is my attempt at solving that problem.
 
