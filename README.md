@@ -6,7 +6,7 @@
 
 ### The Story
 
-One day I woke up and thought to myself that keeping up on the maintenance of my personal [Ghost](https://ghost.org/) website is actually a massive pain. They're always changing how various methods in the themes work, how the site itself works, or some other crap. In some ways, my fear of updating Ghost or of updating the webserver it ran on was starting to rule my life. 
+One day I woke up and thought to myself that keeping up on the maintenance of my personal [Ghost](https://ghost.org/) website is actually a massive pain. They're always changing how various methods in the themes work, how the site itself works, or some other crap. My website was slowly conditioning me to be terrified of updating because of the time cost to fixing it every time it broke. After all, I'm just one woman. Most modern site engines just take for granted that you have an entire corporate dev team with practically unlimited man hours constantly troubleshoot whatever conflicts will inevitably crop up as updates are applied. I don't have time for that shit. 
 
 I told myself that there *has* to be a better way. I should be running my website; it shouldn't be running *me*. There are nineties websites [still running to this day](http://home.mcom.com/home/welcome.html) that haven't been modified for longer than I've been alive. Why is it that these pages can go literally decades without updates and still remain functional, while my Ghost site will throw a fit when I run a routine server update?
 
@@ -20,8 +20,11 @@ WebmasterCMS is my attempt at solving that problem.
 
 wmcms is a static site template built for hosting article-based websites on an nginx webserver. Think of it as "Ghost without the bullshit".
 
-wmcms is a site template that is designed with webmasters in mind, not end users. It's designed to make it as easy and painless as possible to get down and dirty with maintaining your website, you fucking webmaster you. You should be familiar with configuring and maintaining basic web technologies to make the most out of wmcms. You should be prepared to open up and familiarise yourself with how to modify every single file in this entire repository by hand (there's really not that many and none of it is particularly complex-- and that's the whole point of this project!)
+wmcms is written by a webmaster, for the ease of use of other webmasters. It's designed to make it as easy and painless as possible to get down and dirty with maintaining your website, you fucking webmaster you. Unfortunately, that means wmcms isn't particularly great for tech-illiterate people who expect a WYSIWYG monstrosity to enable them to manage and write posts on their website. To get the most out of this platform, you should be familiar with how to configure and maintain an nginx webserver. 
 
+Be prepared to open up and familiarise yourself with how to modify every single file in this entire repository by hand. They are all important and meaningful. Luckily, there's really not that many files and none of them are particularly complex-- and that's the whole point of this project!
+
+Some quick bullet points about wmcms:
 - Powered entirely via [ngx_http_ssi_module](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) and [ngx_fancyindex](https://www.nginx.com/resources/wiki/modules/fancy_index/).
  - No javascript, php, databases, or really anything else
  - Modular design: core site components are centralised in one location, so you only need to modify one set of files to globally tweak your website.
@@ -33,15 +36,15 @@ For a live example of a website running wmcms, check out https://neosynth.net
 
 wmcms is designed with the following ideas in mind:
  - Websites should be simple to maintain
-   - A site should have as few moving parts (application frameworks, web engines, etc) as absolutely necessary to enable its core functionality. The less your site is built on, the fewer points of failure it has when it comes time to update.
+   - A site should have as few moving parts (application frameworks, web engines, etc) as absolutely necessary to enable its core functionality. The less your site is built on, the fewer points of failure it has when the comes time to update.
  - Websites should be lean
    - No one appreciates when you force them to download over a megabyte of scripts and styling just to read a recipe you posted on your food blog. The point of a website is to send information from my computer into your brain; it really shouldn't take a lot to do that effectively.
  - Modern developers have a lot to learn from the webmasters of old
-   - There was a time before Wordpress, before javascript, before even php. And the webmasters who ran the 'net back then made do. They wrangled their webservers to the fullest and hacked together sites that could do anything their business required of them-- somehow. Most of those simple yet powerful and efficient tools those webmasters relied on still exist today and are baked in to our modern systems. We just have to be willing to learn how to use them.
+   - There was a time before Wordpress, before javascript, before even php. And the webmasters who ran the 'net back then made do with what they had. They wrangled their webservers to the fullest and they hacked together sites that could do anything their business required of them-- somehow. The tools used by webmasters of the past may be antiquated, but they are powerful and efficient by design and should not be understimated. Most of these utilities still exist today and are often baked into the foundation of our modern systems. We just have to be willing to learn how to use them.
  - Modern tools are ridiculously powerful
-   - Nostalgia isn't everything. We *do* have more tools than those webmasters of old could ever dream of, and we shouldn't be ashamed of using those tools to their fullest where appropriate. Modern utilities such as OpenGraphs and tastefully responsive styling make the web more accessible, and ultimately lend a better user experience than ever. You'd be amazed just how much you can accomplish with just a CSS stylesheet these days.
+   - Nostalgia isn't everything. We *do* have more tools than those webmasters of old could ever dream of, and we shouldn't be ashamed of using newer toys when appropriate. Modern protocols like OpenGraphs and accessibility tools like the tastefully responsive styling additions in CSS3 help us build better user experiences than ever. You'd be amazed how much interactivity you can accomplish with just a CSS stylesheet these days.
  - **And most importantly:** Websites should be fun.
-   - Before the giants took over, the web was envisioned fun place for all of us to let our imaginations run wild and lovingly craft our own digital spaces for our friends and neighbours to read and learn from. The internet is **our** community, and each of us has the power to make it a little more fun than when we found it.
+   - Before the giants took over, the web was envisioned fun place for all of us to let our imaginations run wild and lovingly craft our own digital spaces for our friends and neighbours to read and learn from. The internet is **our** community, and each of us has the power to make it a little more fun than when we found it. Unfortunately, it's pretty hard to retake the internet as a place for individual self-expression without adequate tools to have a platform. wmcms is here to empower you to build a digital space that doesn't need a fully staffed corporate webdev team just to keep the place running day-to-day so that you can focus on what really matters: sharing your site's unique message with the world.
 
 ### Dependencies
 
