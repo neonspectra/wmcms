@@ -1,10 +1,8 @@
 #!/bin/bash
-# This script is designed to help you update the rss feed for your site running WebmasterCMS. Run this script whenever you upload a new post to your site and it will automatically generate a new rss entry in your feed for the specified page. Consider moving this script to a directory outside of your webserver's installation.
+# Command usage: rsshelper https://website.com/article.html
+rss='../site/html/rss.xml' # Location of destination RSS file to update goes here
 
-# Command usage: rsshelper.sh https://example.com/posts/template-post/index.html
-rss='/var/www/html/rss.xml' # Location of your site's RSS file goes here
-
-# Begin script function below.
+# Begin script function below
 #############################
 
 
@@ -20,10 +18,10 @@ url=$(grep "og:url" $webpage | sed -n -e 's/^.*content=\"\(.*\)\".*$/\1/p')
 author=$(grep 'meta name="author"' $webpage | sed -n -e 's/^.*content=\"\(.*\)\".*$/\1/p')
 pubdate=$(grep 'meta property="article:published_time"' $webpage | sed -n -e 's/^.*content=\"\(.*\)\".*$/\1/p')
 
-# Convert html's ISO8601 date to RSS's RFC-822.
+# Convert html's ISO8601 date to RSS's RFC-822. Fuck you RSS.
 pubdate=$(date -d"$pubdate" --rfc-822)
 
-# Updates the last build date of the RSS feed to now, then creates a new item entry in our existing feed. What kind of webmasters would we be if we didn't find a way to use ed for our site?
+# Updates the last build date of the RSS feed to now and then creates a new RSS item entry in our existing feed using ed
 ed $rss << EOF
 /<lastBuildDate>
 d

@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: https://samurai.blog/config/*
+
+Sitemap: https://samurai.blog/sitemap.xml

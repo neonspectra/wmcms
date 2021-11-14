@@ -63,11 +63,25 @@ For the RSS helper script:
 - sed
 - ed
 
+For the sitemaper script:
+- Bash
+- find
+- sed
+- grep
+
 ### Installation
+
+#### Docker
+
+Instructions on building wmcms as a Docker image can be found [here](https://github.com/neonspectra/wmcms-docker). If you follow these steps, you can skip down to [configuring wmcms](#configure-wmcms).
+
+Using Docker is recommended because it's easier to set up, it gives you a cleaner base to version control new posts to your website more effectively, and it lets you easily test new content locally before you push it to your live environment.
+
+Alternatively, if you prefer setting your webserver up like a traditional webmaster, continue below.
 
 #### Configure nginx
 
-This guide assumes you have a basic nginx webserver installed and running. The basics of installing nginx are outside the scope of this document, but a decent guide on how to do so can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04).
+If you are not using Docker, you will need to set up a webserver with nginx. This guide assumes you have a basic nginx webserver installed and running. The basics of installing nginx are outside the scope of this document, but a decent guide on how to do so can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04).
 
 After you have nginx installed, you will want to add some items to your nginx configuration to configure the features used by wmcms. You may want to tweak accordingly depending on your particular site, but a good set of defaults to include in your server block are:
 
@@ -133,11 +147,23 @@ To make a new post, simply create a new directory within `/posts/` and then copy
 
 When you open up the template `index.html`in your text editor of choice, you will see that it's highly modular, with a bunch of metadata tags at the top for things like the post title, author, etc. Those metadata items are used to populate the modular HTML header for your site, so don't forget to fill them out any time you make a new post!
 
-### Configure RSS
+### Search Engine Optimisation (SEO)
+
+Modern websites have certain accessibility features that make it easier for crawlers to index your site so that it appears in search results on your favourite search engine. Some of these tasks are pretty annoying to do completely by hand, so let's talk about how wmcms can help you.
+
+Feel free to use these options if you want. Or don't. You can delete all the SEO stuff if you want and your website will still work, but you probably won't get as many search hits.
+
+#### robots.txt
+
+This one is pretty self-explanatory because you can set it up once and then forget about it. Make sure to edit the bundled `robots.txt` so that it reflects your domain name.
+
+The bundled configuration disallows crawlers from indexing the `/config` directory since that section is not designed to be user traversable.
+
+#### RSS
 
 The first thing you will want to do is open up `/rss.xml` in your editor of choice and configure your site name, url, and all the other applicable metadata fields.
 
-wmcms does not dynamically generate or update RSS items, but instead relies on you to do so by hand. Thankfully, I've included a script `rsshelper.sh` that will automatically generate new RSS items using a specified page URL as an argument.
+wmcms does not dynamically generate or update RSS items, but instead relies on you to do so by hand. However, this repository includes a script `rsshelper.sh` that will automatically generate new RSS items using a specified page URL as an argument.
 
 To use it, simply edit the configuration items within the script to specify your rss file location and rss item delimiter, then just run the script by doing:
 
@@ -145,7 +171,15 @@ To use it, simply edit the configuration items within the script to specify your
 
 The script will automatically pull down your page from your live website, parse the metadata, and create a new RSS item in your RSS feed automagically. Run this script any time you make a new post that you want to add to RSS.
 
-I would recommend moving `rsshelper.sh` out of your webroot directory since there is no reason to keep it in an accessible portion of your website, since it is not part of the site itself.
+I would recommend moving `rsshelper.sh` outside of your webroot directory. There is no reason to keep it in an accessible portion of your website since it is not part of the site itself.
+
+#### Sitemap
+
+wmcms includes a script `sitemapper.sh` to automate building a sitemap.xml file. Make sure to edit the script options as described in the file comments. 
+
+Paths within your site's `/config` directory are excluded from the sitemap since that path is not intended to be traversable on its own.
+
+I would recommend moving `sitemapper.sh` outside of your webroot directory. There is no reason to keep it in an accessible portion of your website since it is not part of the site itself.
 
 ### Gotchas
 - If you want to change the `background-color` css style, you will notice that it probably won't work if you set it just in `/config/main.css`. That's because it's also explicity set in `/config/header.html` and for all the files in `/config/errors`. Setting the background colour inline in the html body of these pages is important because it prevents users from getting a splash of white (if your site has a dark background) while the linked stylesheet is still loading in the user's browser.
