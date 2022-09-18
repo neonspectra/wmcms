@@ -1,3 +1,8 @@
+# NOTE: This tool has been deprecated in favour of [Arise](https://github.com/spectrasecure/arise). No further updates will be pushed to this repo.
+
+---
+---
+
 # WebmasterCMS - The CMS for Webmasters
 
 *You think you're so cool with your Wordpress site that has more plug-ins than your phone charger is factory rated for? You think it's neat to build a blog that pumps out HTTP requests like it's calling up the whole phonebook any time you try to load a single page?*
